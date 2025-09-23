@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Triplore - My Trips</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Metal+Mania&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <h1 id="home-button">Triplore <h3 class="motto">Map it. Plan it. Live it</h3></h1>
+    <div id="nav-buttons">
+      <div id="guest-nav" style="display:none;"></div>
+      <div id="user-nav" style="display:flex;">
+        <button id="nav-home" class="nav-btn"><a href="home.html">Home</a></button>
+        <button id="nav-explore" class="nav-btn"><a href="explore.html">Explore Destinations</a></button>
+        <button id="nav-trips" class="nav-btn active">Trips</button>
+        <button id="nav-dashboard" class="nav-btn"><a href="dashboard.html">Dashboard</a></button>
+        <button id="nav-account" class="nav-btn"><a href="account.html">Account</a></button>
+        <button id="logout-btn">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="trips-section" class="page-section active">
+      <h1 class="welcoming">MY <span class="highlight">TRIPS</span></h1>
+      
+      <div class="trips-container">
+        <button class="action-btn" id="create-trip-btn">+ Create New Trip</button>
+        
+        <div id="trip-form" style="display: none; margin-top: 2rem;">
+          <div class="account-card">
+            <h3>Plan Your Trip</h3>
+            <form id="new-trip-form">
+              <input type="text" id="trip-name" placeholder="Trip Name" required>
+              <input type="text" id="trip-destination" placeholder="Destination" required>
+              <input type="date" id="trip-start-date" required>
+              <input type="date" id="trip-end-date" required>
+              <textarea id="trip-notes" placeholder="Notes (optional)"></textarea>
+              <button type="submit" class="action-btn">Save Trip</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="trips-list" class="dashboard-cards" style="margin-top: 2rem;">
+          <!-- Trips will be dynamically added here -->
+          <div class="trip-card">
+            <h3>No trips planned yet</h3>
+            <p>Start by creating your first trip!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="trips.js"></script>
+</body>
+</html>
