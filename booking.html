@@ -1,0 +1,163 @@
+[file name]: booking.html
+[file content begin]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Triplore - Book Your Trip</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Metal+Mania&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <h1 id="home-button">Triplore <h3 class="motto">Map it. Plan it. Live it</h3></h1>
+    <div id="nav-buttons">
+      <div id="guest-nav" style="display:none;"></div>
+      <div id="user-nav" style="display:flex;">
+        <button id="nav-home" class="nav-btn"><a href="home.html">Home</a></button>
+        <button id="nav-explore" class="nav-btn"><a href="explore.html">Explore Destinations</a></button>
+        <button id="nav-trips" class="nav-btn"><a href="trips.html">Trips</a></button>
+        <button id="nav-dashboard" class="nav-btn"><a href="dashboard.html">Dashboard</a></button>
+        <button id="nav-account" class="nav-btn"><a href="account.html">Account</a></button>
+        <button id="nav-booking" class="nav-btn active">Book Now</button>
+        <button id="logout-btn">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="booking-section" class="page-section active">
+      <h1 class="welcoming">BOOK YOUR <span class="highlight">ADVENTURE</span></h1>
+      
+      <div class="booking-container">
+        <div class="booking-card">
+          <h3><i class="fas fa-hotel"></i> Accommodation</h3>
+          <p>Find the perfect place to stay</p>
+          <div class="booking-options">
+            <a href="https://www.booking.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/booking-5-226447.png" alt="Booking.com">
+              <span>Booking.com</span>
+            </a>
+            <a href="https://www.airbnb.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/airbnb-2-461777.png" alt="Airbnb">
+              <span>Airbnb</span>
+            </a>
+            <a href="https://www.hotels.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/hotels-2-461711.png" alt="Hotels.com">
+              <span>Hotels.com</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <h3><i class="fas fa-plane"></i> Flights</h3>
+          <p>Book your flights</p>
+          <div class="booking-options">
+            <a href="https://www.skyscanner.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/skyscanner-2-461779.png" alt="Skyscanner">
+              <span>Skyscanner</span>
+            </a>
+            <a href="https://www.kayak.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/kayak-2-461778.png" alt="Kayak">
+              <span>Kayak</span>
+            </a>
+            <a href="https://www.expedia.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/expedia-2-461776.png" alt="Expedia">
+              <span>Expedia</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <h3><i class="fas fa-car"></i> Transportation</h3>
+          <p>Rent cars and more</p>
+          <div class="booking-options">
+            <a href="https://www.rentalcars.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/rentalcars-2-461780.png" alt="RentalCars">
+              <span>RentalCars.com</span>
+            </a>
+            <a href="https://www.uber.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/uber-2-461782.png" alt="Uber">
+              <span>Uber</span>
+            </a>
+            <a href="https://www.hertz.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/hertz-2-461781.png" alt="Hertz">
+              <span>Hertz</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <h3><i class="fas fa-ticket-alt"></i> Activities & Tours</h3>
+          <p>Discover amazing experiences</p>
+          <div class="booking-options">
+            <a href="https://www.getyourguide.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/getyourguide-2-461783.png" alt="GetYourGuide">
+              <span>GetYourGuide</span>
+            </a>
+            <a href="https://www.viator.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/viator-2-461784.png" alt="Viator">
+              <span>Viator</span>
+            </a>
+            <a href="https://www.tripadvisor.com" target="_blank" class="booking-link">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/tripadvisor-2-461785.png" alt="TripAdvisor">
+              <span>TripAdvisor</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-search">
+        <h3>Quick Search</h3>
+        <div class="search-box">
+          <input type="text" id="destination-search" placeholder="Where do you want to go?">
+          <input type="date" id="check-in">
+          <input type="date" id="check-out">
+          <button onclick="quickSearch()" class="action-btn">Search All Sites</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function quickSearch() {
+      const destination = document.getElementById('destination-search').value;
+      const checkIn = document.getElementById('check-in').value;
+      const checkOut = document.getElementById('check-out').value;
+      
+      if (destination) {
+        // Open multiple booking sites in new tabs
+        const sites = [
+          `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(destination)}`,
+          `https://www.airbnb.com/s/${encodeURIComponent(destination)}/homes`,
+          `https://www.expedia.com/Hotel-Search?destination=${encodeURIComponent(destination)}`
+        ];
+        
+        sites.forEach(site => {
+          window.open(site, '_blank');
+        });
+      } else {
+        alert('Please enter a destination!');
+      }
+    }
+
+    // Set default dates (today and tomorrow)
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    
+    document.getElementById('check-in').value = today.toISOString().split('T')[0];
+    document.getElementById('check-out').value = tomorrow.toISOString().split('T')[0];
+
+    // Logout functionality
+    document.getElementById('logout-btn')?.addEventListener('click', () => {
+      localStorage.removeItem('currentUser');
+      window.location.href = 'home.html';
+    });
+  </script>
+</body>
+</html>
+[file content end]

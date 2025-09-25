@@ -119,12 +119,6 @@
       <button id="other-btn" class="action-btn">Other</button>
     </div>
     
-    <!-- Hidden search UI -->
-    <div id="other-search" style="display:none; margin-top:1rem; text-align:center;">
-      <input type="text" id="country-search-input" placeholder="Type a country name..." style="padding:0.5rem; border-radius:5px; border:1px solid #ccc;">
-      <button id="search-country-btn" class="action-btn">Search</button>
-      <div id="search-result" style="margin-top:1rem;"></div>
-    </div>
   </div>
 </section>
     <!-- TRIPS SECTION -->
@@ -139,9 +133,45 @@
       </div>
     </section>
 
+    <!-- Add this modal for custom country input -->
+<div id="custom-country-modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Add Custom Destination</h2>
+    <form id="custom-country-form">
+      <input type="text" id="custom-country-name" placeholder="Country Name" required>
+      <input type="text" id="custom-country-image" placeholder="Image URL (optional)">
+      <div class="form-actions">
+        <button type="button" class="action-btn cancel-btn" id="cancel-custom-country">Cancel</button>
+        <button type="submit" class="action-btn">Add Destination</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Add this modal for trip selection -->
+<div id="select-trip-modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Select Trip</h2>
+    <div id="trip-selection-list">
+      <!-- Trips will be populated here -->
+    </div>
+    <div class="form-actions">
+      <button type="button" class="action-btn cancel-btn" id="cancel-trip-selection">Cancel</button>
+      <button type="button" class="action-btn" id="create-new-trip-from-destination">Create New Trip</button>
+    </div>
+  </div>
+</div>
+<!-- Update the search section -->
+<div id="other-search" style="display:none; margin-top:1rem; text-align:center;">
+  <input type="text" id="country-search-input" placeholder="Type a country name..." style="padding:0.5rem; border-radius:5px; border:1px solid #ccc;">
+  <button id="add-country-btn" class="action-btn">Add Destination</button>
+  <div id="search-result" style="margin-top:1rem;"></div>
+</div>
+
   </main>
 
   <script src="dashboard.js"></script>
   <script src="home.js"></script>
+<script src="explore.js"></script>
 </body>
 </html>

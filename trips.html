@@ -54,6 +54,39 @@
         </div>
       </div>
     </section>
+
+    <!-- Trip Details Modal -->
+    <div id="trip-details-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="trip-details-title">Trip Details</h2>
+        <div id="trip-details-content">
+          <!-- Trip details will be populated here -->
+        </div>
+        <div class="form-actions">
+          <button type="button" class="action-btn" id="edit-trip-from-details">Edit Trip</button>
+          <button type="button" class="action-btn cancel-btn" id="close-trip-details">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Trip Modal -->
+    <div id="edit-trip-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Edit Trip</h2>
+        <form id="edit-trip-form">
+          <input type="hidden" id="edit-trip-id">
+          <input type="text" id="edit-trip-name" placeholder="Trip Name" required>
+          <input type="text" id="edit-trip-destination" placeholder="Destination" required>
+          <input type="date" id="edit-trip-start-date" required>
+          <input type="date" id="edit-trip-end-date" required>
+          <textarea id="edit-trip-notes" placeholder="Notes (optional)"></textarea>
+          <div class="form-actions">
+            <button type="button" class="action-btn cancel-btn" id="cancel-edit-trip">Cancel</button>
+            <button type="submit" class="action-btn">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
 
   <script src="trips.js"></script>
