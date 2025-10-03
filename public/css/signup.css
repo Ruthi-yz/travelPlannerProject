@@ -1,0 +1,28 @@
+
+    .center-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 80vh; /* take most of the screen height */
+      text-align: center;
+    }
+    .message-success {
+      color: green;
+      margin-bottom: 20px;
+    }
+    .message-error {
+      color: red;
+      margin-bottom: 20px;
+    }
+    .center-box button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #0077ff;
+    }
+    .center-box button a {
+      color: white;
+      text-decoration: none;
+    }

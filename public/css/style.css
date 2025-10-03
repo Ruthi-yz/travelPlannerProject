@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  font-family:'Cofo Sans';
+  background-image: url(../image/landscape.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  margin-top: 120px;
+}
+.dashboard-card h3 {
+  margin-bottom: 1rem;
+  color: #b2feff;
+  font-size: 1.5rem;
+}
+
+nav {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  color: rgb(255, 255, 255);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 97%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+ .motto {
+  font-family: 'Dancing Script', cursive;
+  position: absolute !important;
+  top:50px;
+  bottom: 50px;
+
+}
+nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.789);
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+nav button:hover {
+  background: white;
+  color: #0077cc;
+}
+
+nav h1 {
+  all: unset;
+  display: flex ;
+  flex-direction: column ;
+  font-family: 'Metal Mania', cursive ;
+  font-size: 2.5rem ;
+  color: white;
+  text-transform: uppercase ;
+  letter-spacing: 3px ;
+  line-height: 1 ;
+}
+
+.session_owner{
+  font-size: large;
+  font-family: 'Metal Mania', cursive;
+  text-transform: capitalize;
+  color: #b2feff;
+}
+
+#user-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#home-section {
+  margin-top: 300px;
+  display: block;
+  height: 100vh; 
+  text-align: center;
+}
+/* beautiful effect for welcome */
+.welcoming,h2{
+  margin-left: 5%;
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #f9a825, #ff6f00, #f06292, #64b5f6, #4db6ac);
+  background-size: 300% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-out forwards, gradientFlow 8s ease infinite;
+  opacity: 0;
+  
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes gradientFlow {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+.highlight {
+  color: rgb(0, 255, 234);
+  font-weight: bold;
+  font-size: larger;
+}
+
+#logout-btn, #show-login ,#show-signup ,#signup-btn,#wishlist-btn{
+  background: rgba(255, 0, 0, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#logout-btn:hover {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+a{
+  color:white;
+  text-decoration: none;
+}
+
+.welcoming {
+  text-align: center;   
+  font-size: 4rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #f9a825, #ff6f00, #f06292, #64b5f6, #4db6ac);
+  background-size: 300% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-out forwards, gradientFlow 8s ease infinite;
+  opacity: 0;
+}
+
+
+.modal-content h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+/* responsive pages */ 
+
+/* Desktops */ 
+@media(max-width: 1440px){ } 
+
+
+/* Tablets */ 
+@media(max-width: 1024px){ } 
+
+
+/* Phones */ 
+@media(max-width: 400px){ 
+
+  nav{ 
+    display: flex; 
+    flex-direction: column; 
+    flex: 1,3;
+    margin-left: 0; 
+  } 
+
+    .customization{ 
+      display: flex; 
+      flex-direction: row; 
+    } 
+    
+    #user-nav{ 
+      flex-direction: row; 
+      padding:0.3rem; 
+      margin: 0.2rem; 
+      width:100% ; 
+      margin:1rem ;
+    } 
+    #user-nav button { 
+      width: 100%; 
+    } 
+    button{ 
+      padding-top:0.1rem; 
+      padding-bottom:0.1rem; 
+      font-size: 0.5em; 
+      border-radius: 0.5rem;
+    } 
+    #home-button{ 
+      font-size: 2rem; 
+      justify-content:flex-start; 
+      margin-left: 0; 
+    } 
+      .welcoming{ 
+        font-size: 2rem; 
+      } 
+    } 
