@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#wishlist {
+  margin-top: 30px;
+  display: none;
+}
+
+.wishlist-item {
+  background: #f3f3f3;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wishlist-item button {
+  margin-left: 5px;
+  background: #007bff;
+}
+
+.wishlist-item .remove {
+  background: red;
+}
+
+/* Wishlist modal box */
+.wishlist-modal {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.wishlist-modal h3 {
+  margin-top: 0;
+  color: #b2feff;
+}
+
+/* Each wishlist card */
+.wishlist-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Section structure */
+#trips-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding: 2rem 0;
+}
+
+.trips-container {
+  text-align: center;
+  margin-bottom: 1.5rem; /* space between title and wishlist */
+}
+
+#wishlist-modal {
+  width: 90%;
+  max-height: 70vh; /* scrollable area */
+  overflow-y: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+

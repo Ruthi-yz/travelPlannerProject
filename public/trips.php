@@ -94,48 +94,11 @@ if (count($trips) === 0) {
             <p><strong>Notes:</strong> " . nl2br(htmlspecialchars($trip['notes'])) . "</p>
             <button class='action-btn visit-btn'>Visit</button>
             <button class='action-btn edit-btn'>Edit</button>
+            <button class='action-btn todo-btn'>Add-todo-list</button>
             <button class='action-btn delete-btn'>Delete</button>
           </div>";
     }
 }
-
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place'])) {
-    $place = trim($_POST['place']);
-    
-    try {
-        // Check if place already exists
-        $checkSql = "SELECT * FROM wishlist WHERE placeName = :placeName AND userId = :userId";
-        $checkStmt = $db->prepare($checkSql);
-        $checkStmt->execute([
-            ':placeName' => $place,
-            ':userId' => $userId
-        ]);
-        
-        if ($checkStmt->rowCount() > 0) {
-            echo "already_exists";
-        } else {
-            $sql = "INSERT INTO wishlist (placeName, userId) VALUES (:placeName, :userId)";
-            $stmt = $db->prepare($sql);
-            $stmt->execute([
-                ':placeName' => $place,
-                ':userId' => $userId
-            ]);
-            echo "success";
-        }
-    } catch (PDOException $e) {
-        echo "error:" . $e->getMessage();
-    }
-    exit;
-}
-
-// Fetch wishlist
-
-       $sql = "SELECT * FROM wishlist WHERE userId = :userId ORDER BY id DESC"; 
-       $stmt = $db->prepare($sql); 
-       $stmt->execute([':userId' => $userId]); 
-       $wishlist = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-       $wishlists = $wishlist ? $wishlist : [];
 
 ?>
 
@@ -173,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place'])) {
       
       <div class="trips-container">
         <button class="action-btn" id="create-trip-btn">+ Create New Trip</button>
-        <button class="action-btn" id="view-wishlist-btn">View Wishlist</button>
+        <button class="action-btn" id="view-wishlist-btn"><a href="wishlist.php">My Wishlist</a></button>
         <div id="trip-form" style="display: none; margin-top: 2rem;">
           <div class="account-card">
             <h3>Plan Your Trip</h3>
@@ -193,18 +156,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place'])) {
             <?php echo $tripsHtml; ?>
         </div>
    
-   <div id="trip-details-modal" class="modal hidden">
+   <div id="todoList-modal" class="modal hidden">
       <div class="modal-content">
-        <h2 id="trip-details-title">Trip Details</h2>
-        <div id="trip-details-content">
+        <h2 id="TodoList-Title">Things to Do</h2>
+        <div id="TodoList-form"> 
           <!-- Trip details will be populated here -->
-        </div>
+       </div>
         <div class="form-actions">
           <button type="button" class="action-btn" id="edit-trip-from-details">Edit Trip</button>
           <button type="button" class="action-btn cancel-btn" id="close-trip-details">Close</button>
         </div>
       </div>
-    </div>
+    </div> 
 
     <!-- Edit Trip Modal -->
     <div id="edit-trip-modal" class="modal hidden">
@@ -225,24 +188,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place'])) {
       </div>
     </div>
 
-    <div>
-      
-     <div class="wishlist-modal hidden" id="wishlist-modal" >
-        <h3>My Wishlist</h3>
-        <div id="Added_places"></div>
-          <?php if (count($wishlists) > 0): ?>
-            <?php foreach (array_slice($wishlists, 0, 10) as $wishlist): ?>
-              <p> <?= htmlspecialchars($wishlist['placeName']) ?></p>
-            <?php endforeach; ?>
-          <?php else: ?>
-            <p>No Wishlist Added Yet</p>
-          <?php endif; ?>
-          <button ><a href="explore.php">Add Wishlist</a></button>
-        </div>
-      </div>
-     </div>
+    
 
  </section>
+ <script src="./js/wishlist.js"></script>
   <script src="./js/trips.js"></script>
 </body>
 </html>

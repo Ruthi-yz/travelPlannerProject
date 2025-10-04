@@ -1,6 +1,5 @@
 // Toggle Create Trip Form
 const createTripBtn = document.getElementById('create-trip-btn');
-const wishlistBtn = document.getElementById('view-wishlist-btn');
 const tripContainer = document.getElementsByClassName('trips-container');
 // Create Trip toggle
 if (createTripBtn) {
@@ -13,15 +12,6 @@ if (createTripBtn) {
 }
 
 // View Wishlist modal
-if (wishlistBtn) {
-    wishlistBtn.addEventListener('click', function() {
-        const wishlists = document.getElementById('wishlist-modal');
-        if (wishlists) {
-           wishlists.style.display = 'block';
-           wishlists.classList.toggle('hidden'); // toggle instead of just remove
-        }
-    });
-}
 
 
 // Validate New Trip Form
@@ -124,46 +114,12 @@ if (editTripForm) {
 }
 
 
-// When a button with ID 'view-wishlist-btn' is clicked
-const viewWishlistBtn = document.getElementById('view-wishlist-btn');
-if (viewWishlistBtn) {
-    viewWishlistBtn.addEventListener('click', function() {
-        fetch('trips.php?action=fetch_wishlist')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Wishlist data:', data);
-                // Display the wishlist data here
-                displayWishlist(data);
-                console.log(data); // FIXED: was console_log
-            })
-            .catch(error => {
-                console.error('Error fetching wishlist:', error);
-            });
-    });
-}
 
-// Function to display the wishlist data
-function displayWishlist(wishlistItems) {
-    const container = document.getElementById('wishlist-container');
-    if (!container) {
-        console.error('Wishlist container not found');
-        return;
-    }
-    
-    if (!wishlistItems || wishlistItems.length === 0) {
-        container.innerHTML = '<p>No items in your wishlist</p>';
-        return;
-    }
-    
-    let html = '<h3>Your Wishlist:</h3>';
-    wishlistItems.forEach(item => {
-        html += `<div class="wishlist-item">${item.placeName}</div>`;
+document.querySelectorAll('.todo-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tripForm = document.getElementById('TodoList-form');
+        if (tripForm) {
+             tripForm.style.display = tripForm.style.display === 'none' ? 'block' : 'none';
+        }
     });
-    
-    container.innerHTML = html;
-}
+});

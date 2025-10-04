@@ -1,12 +1,12 @@
 // Add to Trip button click
-const addToTripButtons = document.querySelectorAll('.add-to-trip');
+const addToTripButtons = document.querySelectorAll('.add-to-wishlist');
 addToTripButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         btn.textContent = "Added";  
         btn.disabled = true;         
     });
 });
-document.querySelectorAll('.add-to-trip').forEach(btn => {
+document.querySelectorAll('.add-to-wishlist').forEach(btn => {
     btn.addEventListener('click', () => {
         const card = btn.closest('.country-card');
         const place = card.querySelector('.place').innerText;
@@ -55,7 +55,7 @@ fetch("trips.php?action=fetch_wishlist")
         if (data.wishlist && Array.isArray(data.wishlist)) {
             const savedPlaces = data.wishlist.map(p => p.toLowerCase()); // normalize
 
-            document.querySelectorAll('.add-to-trip').forEach(btn => {
+            document.querySelectorAll('.add-to-wishlist').forEach(btn => {
                 const card = btn.closest('.country-card');
                 const place = card.querySelector('.place').innerText.toLowerCase();
 
